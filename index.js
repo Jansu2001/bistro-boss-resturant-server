@@ -35,6 +35,7 @@ async function run() {
     await client.connect();
     const menuCollection=client.db('bistroBossDB').collection('menu')
     const reviewCollection=client.db('bistroBossDB').collection('review')
+    const cartsCollection=client.db('bistroBossDB').collection('carts')
 
 
     app.get('/menu', async (req,res)=>{
@@ -48,6 +49,22 @@ async function run() {
 
     })
 
+
+    // Add TO CART
+
+    // Get Data From Database
+    app.get('/carts', async (req,res)=>{
+      const 
+    })
+
+
+    // Get Order From Client Side
+    app.post('/carts',async (req,res)=>{
+      const items=req.body;
+      const result=await cartsCollection.insertOne(items)
+      res.send(result)
+
+    })
 
 
 
